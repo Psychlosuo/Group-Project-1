@@ -1,0 +1,32 @@
+***PROJECT NAME***
+
+Olympic Gold
+
+***TEAM MEMBERS***
+Nathan Olson
+Benjamin Steffens
+Bryan Figueroa
+Jason Fleming
+
+***AREAS OF FOCUS***
+Nathan/Jason: JavaScript/Backend
+Bryan/Benjamin: Front end
+Jason: pm/misc/admin
+
+***USING***
+Trello for basic/BASIC notes and tasks
+Slack channel
+Balsamiq
+Postmen
+
+***DESCRIPTION***
+A historical reference companion app to the Olympics. we plan to retrieve information from the Olympics API to retrieve other facts about winners or countries of origin. 
+Extensible to season-specific and current Olympics information
+
+***SKETCH***
+none
+
+***APIS***
+https://olympics.pressassociation.io/reference#games
+https://fabian7593.github.io/CountryAPI/#executing-the-countryapi-request
+https://olympicsapi.docs.apiary.io/#reference/olympics/olympics/retrieve-olympic-games
