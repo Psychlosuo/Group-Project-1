@@ -4,16 +4,23 @@ $(document).ready(function () {
 
     var games = [{
         "id": "1",
-        "name": "Winter 2018"
+        "name": "Select an Olympic Games"
     }, {
         "id": "2",
-        "name": "Summer 2016"
+        "name": "Winter 2018"
     }, {
         "id": "3",
+        "name": "Summer 2016"
+    }, {
+        "id": "4",
         "name": "Winter 2014"
     }]
 
     var sports = {
+        'select an olypic games': [{
+            display: "Select a Sport",
+            value: "select-default"
+        }],
         'winter 2018': [{
             display: "Curling",
             value: "curling"
@@ -38,6 +45,10 @@ $(document).ready(function () {
     };
 
     var events = {
+        'select-default': [{
+            display: "Select an Event",
+            value: "event-default"
+        }],
         'curling': [{
             display: "Women's Curling",
             value: "womens-curling"
@@ -103,7 +114,7 @@ $(document).ready(function () {
     $('#sports').change(function () {
         var sports = $(this).val();
         if (events[sports] == undefined) {
-            return $("#events").text('Select an Event');
+            return $("#events").text('Please select a Sport!');
         }
         array_list = events[sports.toLowerCase()];
         $("#events").html("");
