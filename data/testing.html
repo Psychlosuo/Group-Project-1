@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>testing</title>
+  <style>
+  #map {
+    height: 200px;
+    width: 200px;
+  }
+  html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+</style>
+
+</head>
+
+<body>
+  <!-- Retrieved data will be dumped here -->
+  <div class="city"></div>
+  <br>
+  <p>Name   Country   Event    Medal</p>
+  <div class="wind"></div>
+  <br>
+  <div class="humidity"></div>
+  <br>
+  <div class="gold"></div>
+  <div class="gold1"></div>
+  <div class="silver"></div>
+  <div class="bronze"></div>
+  <div class="weather"></div>
+  <div class="latLon"></div>
+
+  
+  <div id="map"></div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="papa_parse.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB5xRSRqsOZM4yxwDtMW5VLM3KajibLog&callback=initMap"></script>
+
+  <script type="text/javascript">
+    // This is our API key. Add your own API key between the ""
+  //  var APIKey = "d4107f4d2db5ca1068c8f65c19eeaccc";
+ // var request = new XMLHttpRequest();
+
+//request.open('GET', 'https://private-anon-424d8aad69-olympicsapi.apiary-mock.com/scrape/olympics/2');
+
+//request.onreadystatechange = function () {
+//  if (this.readyState === 4) {
+//    console.log('Status:', this.status);
+//    console.log('Headers:', this.getAllResponseHeaders());
+//    console.log('Body:', this.responseText);
+//  }
+//};
+
+//request.send();
+
+
+//var data = JSON.stringify(false);
+
+//var xhr = new XMLHttpRequest();
+//xhr.withCredentials = true;
+
+//xhr.addEventListener("readystatechange", function () {
+//  if (this.readyState === this.DONE) {
+//    console.log(this.responseText);
+//  }
+//});
+
+//xhr.open("GET", "https://olympics.api.pressassociation.io/v3/games/games/participant");
+
+//xhr.send(data);
+
+
+
+  var team = "Algeria"
+  var event = "Luge Mixed (Men)'s Doubles"
+  var games = "2002 Winter"
+  var gold = "Gold"
+  var silver = "Silver"
+  var bronze = "Bronze"
+  var city;
+  var geo = new Object();
+       geo.lat1 = lat;
+       geo.lon2 = lon;
+  var geo1 = []
+  var lat;
+  var lon;
+  var map;
+  var test = {      
+     one :  45,
+     two: -93,
+
+
+  }
+
+    // Here we are building the URL we need to query the database
+    var queryURL = "https://en.wikipedia.org/api/rest_v1/page/summary/1976_Summer_Olympics" ;
+
+
+    //var WURL = "http://www.medalbot.com/api/v1/";
+
+    //console.log(url.title)
+
+    var temp;
+    
+    var t;
+    var h;
+    var w;
+    var total;
+
+    // We then created an AJAX call
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response)
+     t =  response.extract
+     $(".city").text(t)  
+      
+     
+    }); 
+
+    console.log(lat)
+    console.log(test.one)
+    console.log(geo1)
+      
+    //  $.ajax({
+    //  url: WURL,
+    //  method: "GET"
+    //}).then(function(response) {
+    //  console.log(response)
+      
+      // Create CODE HERE to Log the queryURL
+      // Create CODE HERE to log the resulting object
+      // Create CODE HERE to transfer content to HTML
+      // Create CODE HERE to calculate the temperature (converted from Kelvin)
+      // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
+      // Create CODE HERE to dump the temperature content into HTML
+
+    //});
+
+    var results = []
+
+   // https://raw.githubusercontent.com/rgriff23/Olympic_history/master/data/athlete_events.csv
+
+    //https://raw.githubusercontent.com/rgriff23/Olympic_history/master/data/noc_regions.csv
+
+         Papa.parse(" https://raw.githubusercontent.com/olsonathan/NEW/master/athlete_events_mydata.csv", {
+         download: true,
+          header: true,
+        	complete: function(results) {
+            
+           
+          
+        
+       console.log(results);
+        console.log(results.data[100]);
+        h = results.data[100]
+     // console.log(typeof results.data[100].Name);
+        w = results.data[100].Name + " " + results.data[100].Team + " " + results.data[100].Event + " "  + results.data[100].Medal
+
+        $(".wind").text(w) 
+
+       
+
+        for (var i = 0; i < results.data.length; ++i){
+    //    var a = results.data[i].Team.includes("Afghanistan");
+    //    console.log(a)
+        
+      if ((results.data[i].Event == event) && (results.data[i].Games == games) &&  (results.data[i].Medal == gold)) {
+         
+        console.log(results.data[i]);
+    
+        Gtotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " "  + results.data[i].Medal
+      //  Gtotal1 = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " "  + results.data[i].Medal
+
+       // console.log(results.data[i].City);
+       $(".humidity").text(JSON.stringify(results.data[i]))
+        $(".gold").append(Gtotal)
+        //$(".gold1").text(Gtotal1)
+
+      }
+
+      if ((results.data[i].Event == event) && (results.data[i].Games == games) &&  (results.data[i].Medal == silver)) {
+
+
+        Stotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " "  + results.data[i].Medal
+
+        $(".silver").append(Stotal)
+      }
+
+      if ((results.data[i].Event == event) && (results.data[i].Games == games) &&  (results.data[i].Medal == bronze)) {
+
+
+        Btotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " "  + results.data[i].Medal
+
+          $(".bronze").append(Btotal)
+
+         city =  results.data[i].City
+
+          }
+
+          
+
+        
+       
+        
+        }
+        
+        
+        weather(city)
+    
+        
+    console.log(lat)
+    
+    
+           
+        
+      
+  
+  
+  
+  }    
+   
+      
+
+
+
+
+
+
+     });
+
+    console.log(geo)
+    console.log(geo.lat1)
+    console.log(test)
+    console.log(test.one)
+    console.log(test.two)
+    console.log(geo1)
+
+//    function initMap() {
+//        map = new google.maps.Map(document.getElementById("map"), {
+//        center: {lat: test.one, lng: test.two},
+//        zoom: 8
+//        });
+//        }
+   
+
+
+
+    function weather(){
+      var APIKey = "d4107f4d2db5ca1068c8f65c19eeaccc";
+
+        // Here we are building the URL we need to query the database
+        // &units=imperial
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
+
+    // We then created an AJAX call
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response)
+      temp = response.main
+      lat = response.coord.lat
+      lon = response.coord.lon
+      console.log(lat)
+
+      
+      geo.lat1 = lat
+      geo.lon2 = lon
+      
+      geo1.push(lat)
+      geo1.push(lon)
+      
+
+    //  con = (t-273.15) * 1.80 + 32
+    //  console.log(con)
+     // document.write(t)
+     // document.write(w)
+     // document.write(con)
+      $(".weather").text(response.name + (JSON.stringify(response.main)));
+
+      $(".latLon").text("lat " + response.coord.lat + "lon " + response.coord.lon)
+
+         
+    });
+
+
+    
+    }
+
+     console.log(geo)
+
+        
+  
+  </script>
+</body>
+
+</html>
