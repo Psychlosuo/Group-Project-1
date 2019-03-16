@@ -1,13 +1,35 @@
 .jumbo{
     text-align:center;
+    color: gold;
+    float: right;
 }
 
+#rings{
+    float:right;
+    opacity:1;
+    height:100px;
+}
+
+#rings:hover{
+    opacity:.5;
+}
+
+.jumbotron{
+    background-color:white;
+}
 .lead{
     text-align:center;
+    color:red;
+    font-weight: large;
+}
+
+.p {
+    float:left;
 }
 
 .search{
-    text-align:center;
+    float:center;
+    color: yellow;
 }
 
 .submit{
@@ -16,4 +38,20 @@
 
 p{
     text-align:center;
+}
+
+#eventBtn{
+    float:right;
+}
+
+#yearBtn{
+    float:right;
+}
+
+#sportBtn{
+    float:right;
+}
+
+#submit{
+    float:right;
 }
