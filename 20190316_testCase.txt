@@ -1,0 +1,62 @@
+Landing page ====================================================================================
+    1 a drop down or other mechanism to query db by 
+        = Games (what olympics)
+        = Sport (catgory of events)
+        = Events (get into an event (has mens/womens built into it))
+
+Results page ====================================================================================
+
+    1 host country headline
+
+    2 table of event participants
+        = Name
+        = Country
+        = Event
+        = Medal
+
+    3 google map api call for location
+        = use "openweather api lat/long" that returns to:
+            = google map of host city
+        
+    4 open weather api call
+        = use "hostcityname" to 
+            = return weather
+            = return latitude and longitude 
+
+    5 wikipedia api call for info
+
+Click Participant ================================================================================
+
+    1. clicking on a table result should present details about the participant
+
+
+TEST CASE #1 =========================================================================================
+
+    1. Games = hard code "2018 Winter"
+    2. Sport = Curling
+    3. Event = "Curling, Men's Curling", "Curling, Women's Curling"
+    4. Do a submit onclick
+        = do JAVASCRIPT
+        = show Results Page
+    5. See table Results
+
+    ==stop==
+
+TEST CASE 1 FOLLOW ON TASKS ==========================================================================
+
+    1. FRONTEND AND BACKEND determine how to code the dropdowns (call to db or hardcode)
+    2. BACKEND == move to test case two
+
+TEST CASE #2 =========================================================================================
+    1. BACKEND test open weather API
+
+JAVASCRIPT ===========================================================================================
+
+1. onSubmit
+    = iterate through our csv and write to the database
+    = then make an api call to weather api
+    = return weather API
+    = after return of lat/long, then call to googlemaps api
+    = then return google map api
+    = call wikipedia for something
+    = push to html 
