@@ -7,15 +7,30 @@
   <!-- Link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+  
+  <script type="text/javascript" src="assets/papa_parse.js"></script>
+
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
   <!-- AND/OR YOUR OWN CSS -->
   <link rel="stylesheet" type="text/css" href="assets/results.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+  <script type="text/javascript" src="assets/group.js"></script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB5xRSRqsOZM4yxwDtMW5VLM3KajibLog&callback=initMap"></script>
+  
+    
+
 </head>
 
 <body>
-    <div class="jumbotron">  <!---jumbotron code--> 
+    <div class="jumbotron">  <!--jumbotron code--> 
       <div class="imager">
         <h1 class="display-4" style="text-align: center;">Results Page</h1>
       </div>
@@ -33,73 +48,8 @@
                 <th scope="col">Medal</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>USA</td>
-                <td>Curling</td>
-                <td>Gold</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+            <tbody id="myTable">
+              
             </tbody>
         
         </table>
@@ -113,51 +63,35 @@
 
     <!----3. Google map host country DIV -->
 
-    <h3>My Google Maps </h3>
+    <div id="Wiki"></div>
+
+    <h3>Event Location</h3>
     <div id="map"></div> 
-    <script>
-    // Initialize and add the map
-    function initMap() {
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
-}
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
+   
 
     </div> <!---name,country, event, medal ( table ) .... Event & Year button-->
 
 
 <!---4. Weather API/Script Below-->
 
- <div id="weather">
+ <div id="weather"></div>
 
+ 
 
- </div>
+ 
 
+ 
 </body>
 
 
 
 
 
-<!----5.Wiki extract DIV  -->
-
-<div id="Wiki">
 
 
 
-</div>
+
+
+
 
 </html>
