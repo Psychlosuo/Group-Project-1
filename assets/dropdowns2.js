@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     function load_json_data(id, parent_id) {
         var html_code = '';
-        $.getJSON('dropdown_data.json', function (data) {
+        $.getJSON('https://psychlosuo.github.io/Group-Project-1/data/dropdown_data.json', function (data) {
 
 
             html_code += '<option value="">Select ' + id + '</option>';
