@@ -1,11 +1,11 @@
 .jumbotron{
-    background-color:white;
+    background-color:lightsteelblue;
     font-weight: 900;
 }
 
 .jumbo{
     text-align:center;
-    color: gold;
+    color: rgb(255, 215, 0);
 }
 
 .lead{
@@ -23,7 +23,7 @@
 
 p{
     text-align:center;
-    color:red;
+    color:rgba(196, 0, 0, 0.781);
 }
 
 #rings{
