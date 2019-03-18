@@ -4,6 +4,9 @@
 
 <head>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Olympic Gold</title>
 
     <!-- Latest compiled and minified CSS -->
@@ -22,11 +25,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
     <!-- Custom JS Files -->
-    <script src="assets/dropdowns.js"></script>
-    <script src="assets/group.js"></script>
-    <script src="assets/papa_parse.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB5xRSRqsOZM4yxwDtMW5VLM3KajibLog&callback=initMap"></script>
+    <script src="assets/dropdowns2.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/style.css">
@@ -62,21 +61,27 @@
             <!-- Games Selection -->
             <div class="form-group row">
                 <div class="col-md-12">
-                    <select id="games" class="custom-select"></select>
+                    <select name="games" id="games" class="custom-select">
+                        <option value="">Select Games</option>
+                    </select>
                 </div>
             </div>
             <br>
             <!-- Sports Selection -->
             <div class="form-group row">
                 <div class="col-md-12">
-                    <select id="sports" class="custom-select"></select>
+                    <select name="sports" id="sports" class="custom-select">
+                        <option value="">Select a Sport</option>
+                    </select>
                 </div>
             </div>
             <br>
             <!-- Event Selection -->
             <div class="form-group row">
                 <div class="col-md-12">
-                    <select id="events" class="custom-select"></select>
+                    <select name="events" id="events" class="custom-select">
+                        <option value="">Select an Event</option>
+                    </select>
                 </div>
             </div>
             <br>
