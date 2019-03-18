@@ -1,9 +1,16 @@
+.jumbotron{
+    background-color:white;
+    font-weight: 900;
+}
+
 .jumbo{
     text-align:center;
+    color: gold;
 }
 
 .lead{
     text-align:center;
+    color:blue;
 }
 
 .search{
@@ -16,4 +23,17 @@
 
 p{
     text-align:center;
+    color:red;
+}
+
+#rings{
+    float:right;
+    height:80px;
+    width: 150px;
+}
+
+#rings2{
+    float:left;
+    height:80px;
+    width:150px;
 }

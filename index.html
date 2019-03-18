@@ -16,29 +16,16 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
-<script type="text/javascript" src="assets/group.js"></script>
-<script type="text/javascript" src="assets/papa_parse.js"></script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB5xRSRqsOZM4yxwDtMW5VLM3KajibLog&callback=initMap"></script>
-
-
-
   
   <link rel="stylesheet" href="assets/style.css">
-
-</head>
-
-<body>
   <div class="jumbotron">
-    <h1 class="jumbo">Olympic Gold</h1>2
-    <p class="lead">Your guide to the best atheletes around the world</p>
+    <h1 class="jumbo">Olympic Gold</h1>
+    <img src="assets/olympics.png" id="rings">
+    <p class="lead">Your guide to the best athletes around the world</p>
     <hr class="search">
     <p>Begin your search here</p>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="events-input" data-toggle="dropdown"
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" id="eventBtn" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           Choose an Event
         </button>
@@ -49,7 +36,7 @@
           <a class="dropdown-item" href="#">Women's Curling</a>
         </div>
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="year-input" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" id="yearBtn" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Choose a Year
           </button>
@@ -57,25 +44,16 @@
             <a class="dropdown-item" href="#">Winter 2018</a>
           </div>
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="sport-input" data-toggle="dropdown"
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" id="sportBtn" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Choose a Sport
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="#">Curling</a>
             </div>
-            <button type="button" class="btn btn-primary" id="add-data" type="submit">Submit</button>
-
-
-            
-
-
-              
-
-
+            <button type="button" id="submit"class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>
   </div>
-  </body>
-</html>
+</head>
