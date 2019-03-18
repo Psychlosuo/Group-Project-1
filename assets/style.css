@@ -1,20 +1,24 @@
 .jumbotron{
     background-color:lightsteelblue;
-    font-weight: 900;
+    Opacity: .92;
 }
 
 .jumbo{
     text-align:center;
+    font-weight: 900;
     color: rgb(255, 215, 0);
+    font-family: garamond;
 }
 
 .lead{
     text-align:center;
     color:blue;
+    font-family: garamond;
 }
 
 .search{
     text-align:center;
+    font-family: garamond;
 }
 
 .submit{
