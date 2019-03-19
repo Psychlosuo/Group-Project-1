@@ -1,5 +1,5 @@
 // START CODING BELOW!!
-var events1 = "Luge Mixed (Men)'s Doubles";  // var for child pull 
+var event1 = "Luge Mixed (Men)'s Doubles";  // var for child pull 
 var sport1 = "";     //var for  child pull
 var games1 = "1988 Winter";     //var for child pull
 var gold = "Gold";
@@ -189,7 +189,7 @@ function weather() {
 
 }//end weather() fct
 
-/*
+
      var config = {
         apiKey: "AIzaSyBuzC2hZ2ASBJUuZJ-DAd1-l4wapO-r7-I",
         authDomain: "olympicgold-943ae.firebaseapp.com",
@@ -207,9 +207,9 @@ function weather() {
     var database = firebase.database();
 
     // Initial Values
-    var events = "Curling Men's Curling";  //blank once dropdowns work
-   var year = "2018 Winter";  //blank once dropdowns work
-    var sport = "Curling";  //blank once dropdowns work
+     var event = "";  //blank once dropdowns work
+     var games = "";  //blank once dropdowns work
+     var sport = "";  //blank once dropdowns work
 
     // Capture Button Click
    $("#add-data").on("click", function (event) {
@@ -217,13 +217,13 @@ function weather() {
         event.preventDefault();
 
 
-        events = $("#event-input").val().trim();
-        year = $("#year-input").val().trim();
-        sport = $("#sport-input").val().trim();
+        games = $("#games").val().trim();
+        sport = $("#sport").val().trim();
+        event = $("#event").val().trim();
 
           database.ref().push({
-           events: events,
-            year: year,
+            event: event,
+            games: games,
             sport: sport,
 
       });
@@ -236,13 +236,13 @@ function weather() {
 
         // Log everything that's coming out of snapshot
 
-        console.log(childsnapshot.val().events);
-        console.log(childsnapshot.val().year);
+        console.log(childsnapshot.val().event);
+        console.log(childsnapshot.val().game);
         console.log(childsnapshot.val().sport);
 
 
-        var events1 = (childsnapshot.val().events);
-        var games1 = (childsnapshot.val().year);
+        event1 = (childsnapshot.val().event);
+        games1 = (childsnapshot.val().game);
 
 
 
@@ -253,7 +253,7 @@ function weather() {
 
 
     });
-*/
+
 
 
 
