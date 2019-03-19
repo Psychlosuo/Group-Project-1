@@ -1,7 +1,10 @@
 // START CODING BELOW!!
-var event1 = "Luge Mixed (Men)'s Doubles";  // var for child pull 
-var sport1 = "";     //var for  child pull
-var games1 = "1988 Winter";     //var for child pull
+
+console.log("TEST:");
+
+var event1 = "";  // var for child pull 
+var sport1;     //var for  child pull
+var games1 = "";     //var for child pull
 var gold = "Gold";
 var silver = "Silver";
 var bronze = "Bronze";
@@ -11,6 +14,9 @@ var lat;
 var lon;
 var map;
 var results = []
+
+console.log("event:" + event1)
+console.log("games:" + games1)
 
 
 
@@ -37,7 +43,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
     for (var i = 0; i < results.data.length; ++i) {
 
 
-      if ((results.data[i].Event == events1) && (results.data[i].Games == games1) && (results.data[i].Medal == gold)) {
+      if ((results.data[i].Event == event1) && (results.data[i].Games == games1) && (results.data[i].Medal == gold)) {
 
         console.log(results.data[i]);
 
@@ -48,7 +54,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
         var add = $("<tr>")
 
         var name1 = $("<td>");
-                  name1.text(results.data[i].Name + " Age " + results.data[i].Age);
+                  name1.text(results.data[i].Name);
                   add.append(name1)
 
         var name2 = $("<td>");
@@ -69,7 +75,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
           $("#myTable").append(add);
       }
 
-      if ((results.data[i].Event == events1) && (results.data[i].Games == games1) && (results.data[i].Medal == silver)) {
+      if ((results.data[i].Event == event1) && (results.data[i].Games == games1) && (results.data[i].Medal == silver)) {
 
 
         Stotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " " + results.data[i].Medal
@@ -90,13 +96,14 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         var name4 = $("<td>");
             name4.text(results.data[i].Medal);
+      //      name4.icon("fas fa-medal");
             add.append(name4)
 
           $("#myTable").append(add);
 
       }
 
-      if ((results.data[i].Event == events1) && (results.data[i].Games == games1) && (results.data[i].Medal == bronze)) {
+      if ((results.data[i].Event == event1) && (results.data[i].Games == games1) && (results.data[i].Medal == bronze)) {
 
 
         Btotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " " + results.data[i].Medal
@@ -139,14 +146,14 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
 
 
-/*
+
 function initMap(coordinates) {
   map = new google.maps.Map(document.getElementById("map"), {
     center: coordinates,
     zoom: 8
   });
 }//end initMap() fct
-*/
+
 
 function weather() {
   var APIKey = "d4107f4d2db5ca1068c8f65c19eeaccc";
@@ -207,24 +214,42 @@ function weather() {
     var database = firebase.database();
 
     // Initial Values
-     var event = "";  //blank once dropdowns work
+     var events = "";  //blank once dropdowns work
      var games = "";  //blank once dropdowns work
      var sport = "";  //blank once dropdowns work
 
+     console.log(games)
+
     // Capture Button Click
-   $("#add-data").on("click", function (event) {
+   $("#add-data").on("click", function(event) {
         // Don't refresh the page!
         event.preventDefault();
 
+        console.log("Selected:");
 
-        games = $("#games").val().trim();
-        sport = $("#sport").val().trim();
-        event = $("#event").val().trim();
+        console.log ($( "#games option:selected" ));
+
+   //     var str = "";
+   //     $( "#games option:selected" ).val(function() {
+   //       str += $( this ).text() + " ";
+   //       console.log("test:" + str)
+   //     });
+    
+    
+    
+        
+        games = $("#games option:selected").text();
+        sport = $("#sports option:selected").text();
+        events = $("#events option:selected").text();
+
+        
 
           database.ref().push({
-            event: event,
+            events: events,
             games: games,
             sport: sport,
+
+           
 
       });
 
@@ -236,23 +261,26 @@ function weather() {
 
         // Log everything that's coming out of snapshot
 
-        console.log(childsnapshot.val().event);
-        console.log(childsnapshot.val().game);
+        console.log(childsnapshot.val().events);
+        console.log(childsnapshot.val().games);
         console.log(childsnapshot.val().sport);
 
 
-        event1 = (childsnapshot.val().event);
-        games1 = (childsnapshot.val().game);
+        event1 = (childsnapshot.val().events);
+        games1 = (childsnapshot.val().games);
+
+
+
+        console.log("event:" + event1)
+        console.log("games:" + games1)
 
 
 
 
-
-
-
-
-
-    });
+      return games1
+    }), function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    };
 
 
 
