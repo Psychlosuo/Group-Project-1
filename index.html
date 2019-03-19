@@ -18,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Srisakdi" rel="stylesheet">
     <!--viewport Mobile-responsiveness-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="assets/papa_parse.js"></script>
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -68,7 +70,7 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <select name="games" id="games" class="custom-select">
-                        <option value="dropSport" >Select Games</option>
+                        <option value="" >Select Games</option>
                     </select>
                 </div>
             </div>
@@ -77,7 +79,7 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <select name="sports" id="sports" class="custom-select">
-                        <option value="dropSport" >Select a Sport</option>
+                        <option value="" >Select a Sport</option>
                     </select>
                 </div>
             </div>
@@ -86,12 +88,12 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <select name="events" id="events" class="custom-select">
-                        <option value="dropSport">Select an Event</option>
+                        <option value="">Select an Event</option>
                     </select>
                 </div>
             </div>
             <br>
-            <button type="button" a-href="results.html" id="add-data"class="btn btn-primary">Search</button>
+            <button type="button" onclick="window.location.href='results.html';" id="add-data" class="btn btn-primary">Search</button>
         </form>
 
         <!-- End Search Selections-->
@@ -100,6 +102,7 @@
 
     <!-- End Bootstrap Container-->
 
+    <script type="text/javascript" src="assets/group.js"></script>
 </body>
 
 </html>

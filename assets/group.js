@@ -1,7 +1,7 @@
 // START CODING BELOW!!
-var event1 = "Luge Mixed (Men)'s Doubles";  // var for child pull 
-var sport1 = "";     //var for  child pull
-var games1 = "1988 Winter";     //var for child pull
+var events1 = "";  // var for child pull 
+var sports1 = "";     //var for  child pull
+var games1 = "";     //var for child pull
 var gold = "Gold";
 var silver = "Silver";
 var bronze = "Bronze";
@@ -11,6 +11,70 @@ var lat;
 var lon;
 var map;
 var results = []
+
+
+var config = {
+  apiKey: "AIzaSyBuzC2hZ2ASBJUuZJ-DAd1-l4wapO-r7-I",
+  authDomain: "olympicgold-943ae.firebaseapp.com",
+  databaseURL: "https://olympicgold-943ae.firebaseio.com",
+  projectId: "olympicgold-943ae",
+  storageBucket: "olympicgold-943ae.appspot.com",
+  messagingSenderId: "985372088866"
+};
+firebase.initializeApp(config);
+
+
+
+
+// Create a variable to reference the database
+var database = firebase.database();
+
+// Initial Values
+var events = "";  //blank once dropdowns work
+var games = "";  //blank once dropdowns work
+var sports = "";  //blank once dropdowns work
+
+// Capture Button Click
+$("#add-data").on("click", function (event) {
+  // Don't refresh the page!
+  event.preventDefault();
+
+
+  games = $("#games option:selected").text();
+  sports = $("#sports option:selected").text();
+  events = $("#events option:selected").text();
+
+    database.ref().push({
+      events: events,
+      games: games,
+      sports: sports,
+
+});
+
+});
+
+
+
+database.ref().on("child_added", function (childsnapshot) {
+
+  // Log everything that's coming out of snapshot
+
+  console.log(childsnapshot.val().events);
+  console.log(childsnapshot.val().games);
+  console.log(childsnapshot.val().sports);
+
+
+  events1 = (childsnapshot.val().events);
+  games1 = (childsnapshot.val().games);
+
+
+
+
+console.log(events1)
+console.log(games1)
+
+
+
 
 
 
@@ -48,7 +112,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
         var add = $("<tr>")
 
         var name1 = $("<td>");
-                  name1.text(results.data[i].Name + " Age " + results.data[i].Age);
+                  name1.text(results.data[i].Name);
                   add.append(name1)
 
         var name2 = $("<td>");
@@ -179,7 +243,7 @@ function weather() {
  var weatherIcon = "http://openweathermap.org/img/w/" +  response.weather[0].icon + ".png";
 
 
-    $("#weather").html("Current Weather in: " + response.name + "<img src='" + weatherIcon + "'>")
+    $("#weather").html("Current Weather in: " + response.name + " Temp: " + response.main.temp + "F" + "   Conditions: " + response.weather[0].description + "<img src='" + weatherIcon + "'>")
 
 //    $(".latLon").text("lat " + response.coord.lat + "lon " + response.coord.lon)
 
@@ -191,66 +255,7 @@ function weather() {
 }//end weather() fct
 
 
-     var config = {
-        apiKey: "AIzaSyBuzC2hZ2ASBJUuZJ-DAd1-l4wapO-r7-I",
-        authDomain: "olympicgold-943ae.firebaseapp.com",
-        databaseURL: "https://olympicgold-943ae.firebaseio.com",
-        projectId: "olympicgold-943ae",
-        storageBucket: "olympicgold-943ae.appspot.com",
-        messagingSenderId: "985372088866"
-    };
-    firebase.initializeApp(config);
-
-
-
-
-    // Create a variable to reference the database
-    var database = firebase.database();
-
-    // Initial Values
-     var event = "";  //blank once dropdowns work
-     var games = "";  //blank once dropdowns work
-     var sport = "";  //blank once dropdowns work
-
-    // Capture Button Click
-   $("#add-data").on("click", function (event) {
-        // Don't refresh the page!
-        event.preventDefault();
-
-
-        games = $("#games").val().trim();
-        sport = $("#sport").val().trim();
-        event = $("#event").val().trim();
-
-          database.ref().push({
-            event: event,
-            games: games,
-            sport: sport,
-
-      });
-
-    });
-
-
-
-    database.ref().on("child_added", function (childsnapshot) {
-
-        // Log everything that's coming out of snapshot
-
-        console.log(childsnapshot.val().event);
-        console.log(childsnapshot.val().game);
-        console.log(childsnapshot.val().sport);
-
-
-        event1 = (childsnapshot.val().event);
-        games1 = (childsnapshot.val().game);
-
-
-
-
-
-
-
+   
 
 
     });
