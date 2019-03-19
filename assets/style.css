@@ -6,20 +6,27 @@ body{
 
 .jumbotron{
     background-color:lightsteelblue;
-    Opacity: .92;
+    Opacity: .9;
+
 }
 
 .jumbo{
+
     text-align:center;
-    font-weight: 900;
+    font-size: 80px;
     color: rgb(255, 215, 0);
-    font-family: garamond;
+    font-family: 'Cinzel', serif;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
 }
 
 .lead{
     text-align:center;
-    color:blue;
-    font-family: garamond;
+    color:brown;
+    font-size:25px;
+    font-family: 'Dancing Script', cursive;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 .search{
@@ -47,3 +54,29 @@ p{
     height:80px;
     width:150px;
 }
+
+#games:hover{
+    background-color: lightblue;
+}
+
+#sports:hover{
+    background-color: lightblue;
+}
+
+#events:hover{
+    background-color: lightblue;
+}
+
+#add-data:hover{
+    background-color: white;
+    color:blue;
+}
+
+#add-data:active{
+    background-color: blue;
+}
+
+#dropSport{
+    color: lightblue;
+}
+
