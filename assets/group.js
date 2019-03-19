@@ -55,6 +55,17 @@ $("#add-data").on("click", function (event) {
 
 
 
+/*
+$('#remove').on('click', function(){
+  console.log('button clicked');
+  event.preventDefault();
+  nameRef.child('test').remove(); // this removes the parent of test (RemoveTest)
+  nameRef.child('name').remove(); // this removes "name:'me'" from root (RemoveTest)
+});
+
+*/
+
+
 database.ref().on("child_added", function (childsnapshot) {
 
   // Log everything that's coming out of snapshot
@@ -255,13 +266,26 @@ function weather() {
 }//end weather() fct
 
 
-   
+remove()
 
 
     });
 
 
-
-
-
+    function remove(){
+    $("#return").on("click", function () {
+      console.log('button clicked');
+      event.preventDefault();
+      
+      var adaRef = firebase.database().ref();
+      adaRef.remove()
+        .then(function() {
+          console.log("Remove succeeded.")
+        })
+        .catch(function(error) {
+          console.log("Remove failed: " + error.message)
+        });
+    })
+    };
+   
 
