@@ -9,21 +9,32 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- AND/OR YOUR OWN CSS -->
   <link rel="stylesheet" type="text/css" href="assets/results.css">
-</head>
+</head> 
 
-<body>
+<body> 
+
     <div class="jumbotron">  <!---jumbotron code--> 
-      <div class="imager">
-        <h1 class="display-4" style="text-align: center;">Results Page</h1>
-      </div>
-        <p class="lead" style="text-align: center;">Results below based on category's selected.</p>
+        <h1 class="display-4" style="text-align: center;"><strong>Results Page</strong></h1>
+        <p class="lead" style="text-align: center;"><strong>Results below based on category's selected.</strong></p>
+        <img src="assets/olympics.png" id="logo" >
+        <div id="carouselExampleSlidesOnly imgs" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" id="imgs" src="assets/1.jpg" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" id="imgs" src="assets/2.jpg" alt="Second slide">
+              </div>
+            </div>
+          </div>
         <hr class="my-4">
-
+    </div>
         <!---2. Table of results-->
-        
+
         <table class="table table-striped">
             <thead>
               <tr>
