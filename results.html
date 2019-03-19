@@ -2,6 +2,8 @@
 <html lang="en-us">
 
 <head>
+    <link rel="icon" href="assets/olympics.png">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:700%7CSrisakdi" rel="stylesheet">
   <meta charset="UTF-8">
   <title> Olympic Game Stats</title>
   <!-- Link to the jQuery Library -->
@@ -12,10 +14,12 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <!-- AND/OR YOUR OWN CSS -->
   <link rel="stylesheet" type="text/css" href="assets/results.css">
-  
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
@@ -26,20 +30,24 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB5xRSRqsOZM4yxwDtMW5VLM3KajibLog&callback=initMap"></script>
   
     
+<<<<<<< HEAD
+</head> 
 
-</head>
+<body> 
 
-<body>
-    <div class="jumbotron">  <!--jumbotron code--> 
-      <div class="imager">
-        <h1 class="display-4" style="text-align: center;">Results Page</h1>
-      </div>
-        <p class="lead" style="text-align: center;">Results below based on category's selected.</p>
-        <hr class="my-4">
+    <div class="jumbotron" style="background-image: url(assets/3.jpg)">  <!---jumbotron code--> 
+        <h1 class="display-4" style="text-align: center; font-family: Cinzel"><strong>Results Page</strong></h1>
+        <p class="lead" style="text-align: center;"><strong>Results below based on category's selected.</strong></p>
+        <a href="http://www.olympic.org/" target="_blank"><img src="assets/olympics.png" id="logo" > </a>
+            </div>
+          </div>
+=======
 
-        <!---2. Table of results-->
+   
         
-        <table class="table table-striped">
+            <!---2. Table of results-->
+
+        <table class="table table-striped" style="background-image: url(assets/3.jpg)">
             <thead>
               <tr>
                 <th scope="col">Name</th>
@@ -54,7 +62,7 @@
         
         </table>
 
-          <button type="button" class="btn btn-primary">Return</button>
+          <a href="index.html"><button type="button" class="btn btn-primary">Return</button> </a>
 
         </div>
 
@@ -63,10 +71,11 @@
 
     <!----3. Google map host country DIV -->
 
-    <div id="Wiki"></div>
+    <div id="Wiki" class="container"></div>
+    <br>
 
-    <h3>Event Location</h3>
-    <div id="map"></div> 
+    <h3 class="container">Event Location</h3>
+    <div id="map" class="container"></div> 
    
 
     </div> <!---name,country, event, medal ( table ) .... Event & Year button-->
@@ -74,7 +83,7 @@
 
 <!---4. Weather API/Script Below-->
 
- <div id="weather"></div>
+ <div id="weather" class="container"></div>
 
  
 
