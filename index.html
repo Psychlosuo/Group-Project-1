@@ -9,6 +9,13 @@
 
     <title>Olympic Gold</title>
 
+    <link rel="icon" href="olympics.png">
+
+    <!--Google Fonts-->
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:700|Srisakdi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Srisakdi" rel="stylesheet">
     <!--viewport Mobile-responsiveness-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -56,11 +63,7 @@
             <div class=col-lg-12>
                 <div class="jumbotron">
                     <h1 class="jumbo">Olympic Gold</h1>
-                    <img src="olympics.png" id="rings">
-                    <img src="olympics.png" id="rings2">
-                    <p class="lead">Your guide to the best athletes around the world</p>
-                    <hr class="search">
-                    <p>Begin your search here</p>
+                    <p class="lead">Your guide to the best athletes around the world both past and present</p>
                 </div>
             </div>
         </div>
@@ -73,8 +76,10 @@
             <!-- Games Selection -->
             <div class="form-group row">
                 <div class="col-md-12">
-                    <select name="games" id="games" type="text" class="form-control">
-                        <option value="">Select Games</option>
+
+                    <select name="games" id="games" class="custom-select">
+                        <option value="dropSport" >Select Games</option>
+
                     </select>
                 </div>
             </div>
@@ -83,7 +88,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <select name="sports" id="sports" class="custom-select">
-                        <option value="">Select a Sport</option>
+                        <option value="dropSport" >Select a Sport</option>
                     </select>
                 </div>
             </div>
@@ -92,7 +97,7 @@
             <div class="form-group row">
                 <div class="col-md-12">
                     <select name="events" id="events" class="custom-select">
-                        <option value="">Select an Event</option>
+                        <option value="dropSport">Select an Event</option>
                     </select>
                 </div>
             </div>

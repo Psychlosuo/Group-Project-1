@@ -168,7 +168,7 @@ function weather() {
     method: "GET"
   }).then(function (response) {
     console.log("Weather Response: ", response)
-    temp = response.main
+    temp = response.main.temp
     lat = response.coord.lat
     lon = response.coord.lon
 
@@ -183,9 +183,10 @@ function weather() {
 //    geo1.push(lat)
 //    geo1.push(lon)
 
+ var weatherIcon = "http://openweathermap.org/img/w/" +  response.weather[0].icon + ".png";
 
 
-    $("#weather").text("Current Weather in: " + response.name + (JSON.stringify(response.main)));
+    $("#weather").html("Current Weather in: " + response.name + "<img src='" + weatherIcon + "'>")
 
 //    $(".latLon").text("lat " + response.coord.lat + "lon " + response.coord.lon)
 
