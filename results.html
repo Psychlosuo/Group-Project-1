@@ -2,10 +2,15 @@
 <html lang="en-us">
 
 <head>
+    <link rel="icon" href="assets/olympics.png">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:700%7CSrisakdi" rel="stylesheet">
   <meta charset="UTF-8">
   <title> Olympic Game Stats</title>
   <!-- Link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="assets/papa_parse.js"></script>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -13,29 +18,36 @@
 
   <!-- AND/OR YOUR OWN CSS -->
   <link rel="stylesheet" type="text/css" href="assets/results.css">
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+  <script type="text/javascript" src="assets/group.js"></script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB5xRSRqsOZM4yxwDtMW5VLM3KajibLog&callback=initMap"></script>
+  
+    
+<<<<<<< HEAD
 </head> 
 
 <body> 
 
-    <div class="jumbotron">  <!---jumbotron code--> 
-        <h1 class="display-4" style="text-align: center;"><strong>Results Page</strong></h1>
+    <div class="jumbotron" style="background-image: url(assets/3.jpg)">  <!---jumbotron code--> 
+        <h1 class="display-4" style="text-align: center; font-family: Cinzel"><strong>Results Page</strong></h1>
         <p class="lead" style="text-align: center;"><strong>Results below based on category's selected.</strong></p>
-        <img src="assets/olympics.png" id="logo" >
-        <div id="carouselExampleSlidesOnly imgs" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" id="imgs" src="assets/1.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" id="imgs" src="assets/2.jpg" alt="Second slide">
-              </div>
+        <a href="http://www.olympic.org/" target="_blank"><img src="assets/olympics.png" id="logo" > </a>
             </div>
           </div>
-        <hr class="my-4">
-    </div>
-        <!---2. Table of results-->
+=======
 
-        <table class="table table-striped">
+   
+        
+            <!---2. Table of results-->
+
+        <table class="table table-striped" style="background-image: url(assets/3.jpg)">
             <thead>
               <tr>
                 <th scope="col">Name</th>
@@ -44,78 +56,13 @@
                 <th scope="col">Medal</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">John Doe</th>
-                <td>USA</td>
-                <td>Curling</td>
-                <td>Gold</td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+            <tbody id="myTable">
+              
             </tbody>
         
         </table>
 
-          <button type="button" class="btn btn-primary">Return</button>
+          <a href="index.html"><button type="button" class="btn btn-primary">Return</button> </a>
 
         </div>
 
@@ -124,51 +71,36 @@
 
     <!----3. Google map host country DIV -->
 
-    <h3>My Google Maps </h3>
-    <div id="map"></div> 
-    <script>
-    // Initialize and add the map
-    function initMap() {
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
-}
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>
+    <div id="Wiki" class="container"></div>
+    <br>
+
+    <h3 class="container">Event Location</h3>
+    <div id="map" class="container"></div> 
+   
 
     </div> <!---name,country, event, medal ( table ) .... Event & Year button-->
 
 
 <!---4. Weather API/Script Below-->
 
- <div id="weather">
+ <div id="weather" class="container"></div>
 
+ 
 
- </div>
+ 
 
+ 
 </body>
 
 
 
 
 
-<!----5.Wiki extract DIV  -->
-
-<div id="Wiki">
 
 
 
-</div>
+
+
+
 
 </html>

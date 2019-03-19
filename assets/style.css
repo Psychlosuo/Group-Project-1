@@ -1,0 +1,49 @@
+body{
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+.jumbotron{
+    background-color:lightsteelblue;
+    Opacity: .92;
+}
+
+.jumbo{
+    text-align:center;
+    font-weight: 900;
+    color: rgb(255, 215, 0);
+    font-family: garamond;
+}
+
+.lead{
+    text-align:center;
+    color:blue;
+    font-family: garamond;
+}
+
+.search{
+    text-align:center;
+    font-family: garamond;
+}
+
+.submit{
+    justify-content: center;
+}
+
+p{
+    text-align:center;
+    color:rgba(196, 0, 0, 0.781);
+}
+
+#rings{
+    float:right;
+    height:80px;
+    width: 150px;
+}
+
+#rings2{
+    float:left;
+    height:80px;
+    width:150px;
+}
