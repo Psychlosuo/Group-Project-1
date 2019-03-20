@@ -122,7 +122,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
         //   $(".gold").append(Gtotal)
 
     //    var flag = assets/flag-icon-css-master/flags/4x3/ad.svg
-        var co = results.data[i].ISO
+        var co = results.data[i].Iso
 
         var add = $("<tr>")
 
@@ -159,7 +159,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         Stotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " " + results.data[i].Medal
 
-        var co = results.data[i].ISO
+        var co = results.data[i].Iso
         var add = $("<tr>")
 
         var name1 = $("<td>");
@@ -193,7 +193,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         Btotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " " + results.data[i].Medal
 
-        var co = results.data[i].ISO
+        var co = results.data[i].Iso
 
         var add = $("<tr>")
 
