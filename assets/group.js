@@ -55,15 +55,6 @@ $("#add-data").on("click", function (event) {
 
 
 
-/*
-$('#remove').on('click', function(){
-  console.log('button clicked');
-  event.preventDefault();
-  nameRef.child('test').remove(); // this removes the parent of test (RemoveTest)
-  nameRef.child('name').remove(); // this removes "name:'me'" from root (RemoveTest)
-});
-
-*/
 
 
 database.ref().on("child_added", function (childsnapshot) {
@@ -131,7 +122,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
                   add.append(name1)
 
         var name2 = $("<td>");
-           name2.text(results.data[i].Team);
+           name2.text(results.data[i].Team + "  ");
            var imageCrystal = $("<img>");
            imageCrystal.attr("src", "assets/flags-mini/"+ co + ".png");
             name2.append(imageCrystal);
@@ -167,7 +158,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
                   add.append(name1)
 
         var name2 = $("<td>");
-           name2.text(results.data[i].Team);
+           name2.text(results.data[i].Team + " ");
            var imageCrystal = $("<img>");
            imageCrystal.attr("src", "assets/flags-mini/"+ co + ".png");
             name2.append(imageCrystal);
@@ -202,7 +193,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
                   add.append(name1)
 
         var name2 = $("<td>");
-           name2.text(results.data[i].Team);
+           name2.text(results.data[i].Team + " ");
            var imageCrystal = $("<img>");
            imageCrystal.attr("src", "assets/flags-mini/"+ co + ".png");
             name2.append(imageCrystal);
@@ -237,14 +228,14 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
 
 
-/*
+
 function initMap(coordinates) {
   map = new google.maps.Map(document.getElementById("map"), {
     center: coordinates,
     zoom: 8
   });
 }//end initMap() fct
-*/
+
 
 function weather() {
   var APIKey = "d4107f4d2db5ca1068c8f65c19eeaccc";
