@@ -120,6 +120,10 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
            $(".humidity").text(JSON.stringify(results.data[i]))
         //   $(".gold").append(Gtotal)
+
+    //    var flag = assets/flag-icon-css-master/flags/4x3/ad.svg
+        var co = results.data[i].ISO
+
         var add = $("<tr>")
 
         var name1 = $("<td>");
@@ -128,6 +132,9 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         var name2 = $("<td>");
            name2.text(results.data[i].Team);
+           var imageCrystal = $("<img>");
+           imageCrystal.attr("src", "assets/flags-mini/"+ co + ".png");
+            name2.append(imageCrystal);
             add.append(name2)
 
         var name3 = $("<td>");
@@ -152,6 +159,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         Stotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " " + results.data[i].Medal
 
+        var co = results.data[i].ISO
         var add = $("<tr>")
 
         var name1 = $("<td>");
@@ -160,6 +168,9 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         var name2 = $("<td>");
            name2.text(results.data[i].Team);
+           var imageCrystal = $("<img>");
+           imageCrystal.attr("src", "assets/flags-mini/"+ co + ".png");
+            name2.append(imageCrystal);
             add.append(name2)
 
         var name3 = $("<td>");
@@ -182,7 +193,7 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         Btotal = results.data[i].Name + " " + results.data[i].Team + " " + results.data[i].Event + " " + results.data[i].Medal
 
-        
+        var co = results.data[i].ISO
 
         var add = $("<tr>")
 
@@ -192,6 +203,9 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         var name2 = $("<td>");
            name2.text(results.data[i].Team);
+           var imageCrystal = $("<img>");
+           imageCrystal.attr("src", "assets/flags-mini/"+ co + ".png");
+            name2.append(imageCrystal);
             add.append(name2)
 
         var name3 = $("<td>");
