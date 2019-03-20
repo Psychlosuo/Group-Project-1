@@ -36,3 +36,21 @@
     height: 400px;
     width: 400px;
   }
+
+
+  #gold{
+      color: gold;
+      font-size: 30px;
+  }
+
+  #silver{
+      color: #8c8c8c;
+      font-size: 25px;
+  }
+
+  #bronze{
+    color: #998200;
+    font-size: 20px
+  }
+
+  

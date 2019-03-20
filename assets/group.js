@@ -136,6 +136,9 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         var name4 = $("<td>");
             name4.text(results.data[i].Medal);
+            name4.attr("class","sourceText fas fa-medal");
+            $(name4.sourceText).prepend('<i class="fas fa-medal"></i>');
+            name4.attr("id","gold");
             add.append(name4)
 
 
@@ -165,6 +168,9 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         var name4 = $("<td>");
             name4.text(results.data[i].Medal);
+            name4.attr("class","sourceText fas fa-medal");
+            $(name4.sourceText).prepend('<i class="fas fa-medal"></i>');
+            name4.attr("id","silver");
             add.append(name4)
 
           $("#myTable").append(add);
@@ -194,6 +200,9 @@ Papa.parse("https://raw.githubusercontent.com/Psychlosuo/Group-Project-1/master/
 
         var name4 = $("<td>");
             name4.text(results.data[i].Medal);
+           name4.attr("class","sourceText fas fa-medal");
+           $(name4.sourceText).prepend('<i class="fas fa-medal"></i>');
+           name4.attr("id","bronze");
             add.append(name4)
 
           $("#myTable").append(add);
