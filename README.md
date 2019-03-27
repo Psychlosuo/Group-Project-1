@@ -1,4 +1,5 @@
-# Group-Project-1
-First group Project- API website
+The Olympic games have always been difficult to track as a viewer. Individuals are forced to watch an event they’re not interesting in or have to listen to commentary instead of watching the sporting event that is currently taking place. This is true for those who are viewing the Olympics from home, but also for those who are attending the Olympics in real-time.
 
-//Jason adding his name on line 4
+Typically, general specifics are explained by commentators and pundits to draw our attention to certain events, but the size and scope of the Olympics is too much for a single television channel to cover. Events that someone may be interested in get overlooked diminishing the hard work and dedication each and every athlete puts in, as well as diminishing the spectacle of the Olympics itself.
+
+Olympic Gold is an app that gives individuals the freedom to retrieve information from every Olympic Games ever recorded using three simple inputs. We put an emphasis on the athletes and their accomplishments - as well as the Olympic locations themselves, displaying key information to our users about the locations and dates each Olympic games took place. 
